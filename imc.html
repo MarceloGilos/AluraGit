@@ -1,0 +1,30 @@
+<meta charset ="UTF-8">
+
+<h1>Calculando seu IMC!</h1>
+<input value="Altura" name="altura"/>
+<br>
+<br>
+<input value="Peso" name="peso"/>
+
+<input type="button" name="botao" value="Calcular"/>
+<br>
+<br>
+<input readonly type="text" name="resultado" value="Resultado"/>
+
+<script>
+    
+var altura = document.querySelector("input[name='altura']");
+var peso = document.querySelector("input[name='peso']");
+var botao = document.querySelector("input[name='botao']");
+var resultado = document.querySelector("input[name='resultado']")
+
+function imcCalculadora(peso,altura){
+ return peso/(altura*altura);
+}
+
+
+botao.onclick = () => {
+    resultado.value = imcCalculadora(peso.value,altura.value);
+};
+
+</script>
